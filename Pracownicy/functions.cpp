@@ -34,15 +34,19 @@ void menuSwitch(char choice)
 	case '1':
 	{
 		pushEmployee();
+		break;
 	}
 	case '2':
 	{
 		eraseEmployee();
+		break;
 	}
 	case '3':
 		calculate_paychecks();
+		break;
 	case '4':
 		saveProgressToCSV(employees);
+		break;
 	default:
 		break;
 	}
@@ -72,8 +76,11 @@ void eraseEmployee()
 	getline(cin, idToBeFound);
 	for (auto listIterator = begin(employees); listIterator != end(employees); listIterator++)
 	{
-		if (listIterator->getIdNumber().compare(idToBeFound) == 0)
+		if (!listIterator->getIdNumber().compare(idToBeFound))
+		{
 			employees.erase(listIterator);
+			break;
+		}
 	}
 }
 
