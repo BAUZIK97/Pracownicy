@@ -11,4 +11,5 @@ void menuSwitch(char choice);
 void pushEmployee();
 void eraseEmployee();
 void calculate_paychecks();
+vector<string> colectNewEmployeeData();
 void addArgumentToRow(vector<string>& row);

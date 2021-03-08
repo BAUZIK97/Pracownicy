@@ -54,17 +54,7 @@ void menuSwitch(char choice)
 
 void pushEmployee()
 {
-	/*CEmployee employee;*/
-	vector<string> row;
-	string line;
-	cout << "Enter full name of new employee: ";
-	addArgumentToRow(row);
-	cout << "Enter current work time: ";
-	addArgumentToRow(row);
-	cout << "Enter hourly salary: ";
-	addArgumentToRow(row);
-	cout << "Enter Id: ";
-	addArgumentToRow(row);
+	auto row = colectNewEmployeeData();
 	CEmployee employee(row);
 	employees.push_back(employee);
 }
@@ -90,6 +80,20 @@ void calculate_paychecks()
 	{
 		employee.calculatePaycheck();
 	}
+}
+
+vector<string> colectNewEmployeeData()
+{
+	vector<string> row;
+	cout << "Enter full name of new employee: ";
+	addArgumentToRow(row);
+	cout << "Enter current work time: ";
+	addArgumentToRow(row);
+	cout << "Enter hourly salary: ";
+	addArgumentToRow(row);
+	cout << "Enter Id: ";
+	addArgumentToRow(row);
+	return row;
 }
 
 void addArgumentToRow(vector<string>& row)
